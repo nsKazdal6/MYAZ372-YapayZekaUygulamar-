@@ -1,7 +1,5 @@
 import pandas as pd
 
-
-
 df = pd.read_csv("linear_regression_dataset.csv",sep=";")
 
 x=df.deneyim.values.reshape(-1,1)
