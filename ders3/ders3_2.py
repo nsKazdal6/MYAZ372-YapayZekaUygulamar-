@@ -1,7 +1,8 @@
 import matplotlib.pyplot as plt
 import pandas as pd
 
-veriler=pd.read_csv('veri1.csv')
+veriler=pd.read_csv(r'C:\Users\nazar\OneDrive\Desktop\YapayZekaUygulamaları\ders3\veri1.csv')
+
 
 x=veriler.iloc[:,1:2]
 y=veriler.iloc[:,2:]
@@ -13,7 +14,7 @@ scaler =StandardScaler()
 X_scaled=scaler.fit_transform(X)
 
 from sklearn.svm import SVR
-svr_reg =SVR(kermnel='poly') # 'linear','poly','sigmoid','rbf'
+svr_reg =SVR(kernel='rbf') # 'linear','poly','sigmoid','rbf'
 svr_reg.fit(X_scaled,Y)
 
 plt.scatter(X,Y,color='red')
